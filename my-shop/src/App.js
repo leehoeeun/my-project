@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { createGlobalStyle } from 'styled-components';
+import { Route, Routes } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './pages/Header';
+
+const GlobalStyle = createGlobalStyle`
+  /* 글로벌(공통) 스타일 */
+  body {
+    box-sizing: border-box;
+  }
+  #root {
+    text-align: center;
+  }
+  * {
+    box-sizing: inherit;
+  }
+  .inner {
+    margin: 0 auto;
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+`;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <Routes>
+        <Route path='/' element={<Header />} />
+        {/* <Route index element={<Main />}/> */}
+        {/* <Route path='/detail' element={<Product />}/> */}
+        {/* <Route path='/cart' element={<Cart />} /> */}
+        <Route path='*' element={<div>페이지가 존재하지 않습니다.</div>} />
+      </Routes>
+    </>
   );
 }
 
