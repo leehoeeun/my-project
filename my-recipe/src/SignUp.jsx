@@ -28,7 +28,9 @@ const handleSignup = () => {
     createUserWithEmailAndPassword(auth, newUserEmail, newUserPassword)
     .then((userCredential) => {
       // Signed in
-      setUser(userCredential.user);    
+      setUser(userCredential.user);
+      console.log(userCredential);
+      console.log(userCredential.user);
     })
     .catch((error) => {
       console.log(error.code);

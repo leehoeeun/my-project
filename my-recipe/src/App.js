@@ -1,6 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Signup from "./SignUp";
 import { useState } from 'react';
+import Signin from "./Signin";
+import Recipe from "./Recipe";
 
 
 function App() {
@@ -11,7 +13,9 @@ function App() {
     <BrowserRouter>
       <Routes vis={vis} setVis={setVis}>
         {/* <Route setVis={setVis} path="/signin" element={<Signin />} /> */}
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/" element={<Signup />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/recipe" element={<Recipe />} />
       </Routes>
     </BrowserRouter>
     </div>
